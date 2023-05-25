@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def relu(x):
+    return np.maximum(0, x)
+
+def tanh(x):
+    return np.tanh(x)
+
+def leaky_relu(x):
+    return np.maximum(0.1 * x, x)
+
+x = np.linspace(-10, 10, 100)
+
+
+plt.plot(x, sigmoid(x), label='sigmoid')
+plt.legend()
+plt.show()
+
+plt.plot(x, relu(x), label='ReLU')
+plt.legend()
+plt.show()
+
+plt.plot(x, tanh(x), label='tanh')
+plt.legend()
+plt.show()
+
+plt.plot(x, leaky_relu(x), label='Leaky ReLU')
+plt.legend()
+plt.show()
